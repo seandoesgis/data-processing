@@ -1,0 +1,19 @@
+{
+  "name": "dvrpc-report-convert",
+  "version": "1.0.0",
+  "description": "A command-line tool for converting DVRPC PDF covers to pngs for web publishing.",
+  "main": "index.js",
+  "scripts": {
+    "test": "Apache-2.0"
+  },
+  "author": "Michael Ruane",
+  "license": "ISC",
+  "bin":{
+  	"cover-convert": "./index.js"
+  },
+  "dependencies": {
+    "pdf2png-mp": "*",
+    "node-walker": "*",
+    "util": "*"
+  }
+}
