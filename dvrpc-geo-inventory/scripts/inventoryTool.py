@@ -21,6 +21,7 @@ in Windows environment.
 
 Written by: Michael Ruane, DVRPC
 Date updated: 10/26/2015
+Added path to server for direct write of csv (SL)
 """
 
 import arcpy
@@ -74,7 +75,7 @@ def ListWorkspaceContentsAndMetadata(workspace):
                 outrow.extend(GetMetadataItems(child.catalogPath))
             except:
                 pass
-            print ",".join(outrow)
+            #print ",".join(outrow)
             yield outrow
 
         # Recurse to get the contents of feature datasets
@@ -321,11 +322,8 @@ def xstr(s):
         return str(s)
 
 if __name__ == '__main__':
-    #rootdir = r"V:\Transportation"
-    saveLocation = arcpy.GetParameterAsText(0)
-    #saveLocation = r"D:\dvrpc_shared\FY2016\VOutput"
-    csvFile = saveLocation+"\dvrpc_geo_inventory.csv"
-    csvFieldFile = saveLocation+"\dvrpc_field_inventory.csv"
+    csvFile = r"\\10.1.1.239\wwwroot\data-directory\data\dvrpc_geo_inventory.csv"
+    csvFieldFile = r"\\10.1.1.239\wwwroot\data-directory\data\dvrpc_field_inventory.csv"
     headerRow = CreateHeaderRow()
     fieldHeaderRow = CreateFieldHeaderRow()
     #print headerRow
